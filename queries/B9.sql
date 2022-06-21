@@ -1,6 +1,6 @@
 SELECT
-  rc.id_regiao,
-  rc.con
+  rc.con,
+  rc.nome_regiao
 FROM
   regiao_con AS rc
 WHERE
