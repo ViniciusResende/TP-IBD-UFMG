@@ -1,0 +1,13 @@
+{
+  "name": "memory-game-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "knex": "^2.1.0",
+    "sqlite3": "^5.0.8"
+  }
+}
