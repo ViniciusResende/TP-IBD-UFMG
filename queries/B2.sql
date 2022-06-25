@@ -1,24 +1,19 @@
 SELECT
   rc.con,
-  rc.nome_regiao
+  rc.nome_regiao,
+  ar.quant_atletas
 FROM
   regiao_con AS rc
-WHERE
-  rc.id_regiao IN (
+  JOIN (
     SELECT
-      id_regiao
+      id_regiao,
+      COUNT(id_regiao) AS quant_atletas
     FROM
-      (
-        SELECT
-          id_regiao,
-          COUNT(id_regiao) as x
-        FROM
-          pessoa_regiao
-        GROUP BY
-          id_regiao
-        ORDER BY
-          X DESC
-        LIMIT
-          5
-      )
-  )  
+      pessoa_regiao
+    GROUP BY
+      id_regiao
+    ORDER BY
+      quant_atletas DESC
+    LIMIT
+      5
+  ) AS ar ON rc.id_regiao = ar.id_regiao
