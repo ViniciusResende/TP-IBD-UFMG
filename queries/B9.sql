@@ -18,4 +18,4 @@ WHERE
       m.id_medalha <> 4
   )
   ORDER BY
-  	rc.con
+  	rc.nome_regiao
